@@ -27,9 +27,7 @@ contract ERC20Token {
 
     // Constructor function that initializes the contract
     constructor(
-        uint256 initialSupply,
-        string memory "Mink'oin",
-        string memory "MNKA"
+        uint256 initialSupply
     ) public {
         // Update total supply with the decimal amt
         totalSupply = initialSupply * 10 ** uint256(decimals);
@@ -115,7 +113,7 @@ contract ERC20Token {
         balanceOf[msg.sender] -= _value;
         // Update totalSupply
         totalSupply -= _value;
-        emit Spend(msg.sender, _value);
+        emit Spent(msg.sender, _value);
         return true;
     }
 
@@ -134,7 +132,7 @@ contract ERC20Token {
         allowance[_from][msg.sender] -= _value;
         // Update totalSupply
         totalSupply -= _value;
-        emit Spend(_from, _value);
+        emit Spent(_from, _value);
         return true;
     }
 }

@@ -10,7 +10,7 @@ contract Token {
     function totalSupply() constant return (uint256 supply) {}
 
     // _owner is the address from which the balance will be retrieved
-    function balanceOf (address _owner) constant returns (uint256 balance) {}
+    function balanceOf(address _owner) constant returns (uint256 balance) {}
 
     // _to is the address of recipient, _value is the amt to be xferred
     function xfer(address _to, uint256 _value) returns (bool success) {}

@@ -32,17 +32,15 @@ contract AyniToken {
     event Spent(address indexed from, uint256 value);
 
     // Constructor function that initializes the contract
-    constructor(
-        uint256 initialSupply
-    ) public {
+    constructor(uint256 initialSupply,string memory tokenName,string memory tokenSymbol) public {
         // Update total supply with the decimal amt
         totalSupply = initialSupply * 10 ** uint256(decimals);
         // Give all inital tokens to the creator of the contract
         balanceOf[msg.sender] = totalSupply;
         // Set name
-        name = "Mink'oin";
+        name = tokenName;
         // Set symbol
-        symbol = "MNKA";
+        symbol = tokenSymbol;
     }
 
     // can only be called by this contract
